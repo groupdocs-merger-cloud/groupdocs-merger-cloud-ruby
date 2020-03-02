@@ -17,15 +17,16 @@ GEM
     minitest (5.13.0)
     multipart-post (2.1.1)
     public_suffix (3.1.1)
-    rake (12.0.0)
+    rake (13.0.1)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   groupdocs_merger_cloud!
   minitest (~> 5.11, >= 5.11.3)
-  rake (~> 12.0.0)
+  rake (~> 13.0.1)
 
 BUNDLED WITH
    1.16.6
