@@ -43,12 +43,4 @@ end
 ## Licensing
 GroupDocs.Merger Cloud Ruby SDK licensed under [MIT License](LICENSE).
 
-## Resources
-+ [**Website**](https://www.groupdocs.cloud)
-+ [**Product Home**](https://products.groupdocs.cloud/merger)
-+ [**Documentation**](https://docs.groupdocs.cloud/display/mergercloud/Home)
-+ [**Free Support Forum**](https://forum.groupdocs.cloud/c/merger)
-+ [**Blog**](https://blog.groupdocs.cloud/category/merger)
-
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/merger).
+[Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/merger/ruby) | [Docs](https://docs.groupdocs.cloud/merger/) | [Demos](https://products.groupdocs.app/merger/family) | [API Reference](https://apireference.groupdocs.cloud/merger/) | [Examples](https://github.com/groupdocs-merger-cloud/groupdocs-merger-cloud-ruby-samples) | [Blog](https://blog.groupdocs.cloud/category/merger/) | [Free Support](https://forum.groupdocs.cloud/c/merger) | [Free Trial](https://purchase.groupdocs.cloud/trial)
