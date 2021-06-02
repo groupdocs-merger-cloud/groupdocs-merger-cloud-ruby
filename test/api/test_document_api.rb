@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#    Copyright (c) 2003-2019 Aspose Pty Ltd
+#    Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -94,6 +94,27 @@ module GroupDocsMergerCloud
       result = @document_api.join(JoinRequest.new(options))
       assert_equal(options.output_path, result.path)
     end
+
+    def test_join_cross_format
+      item1 = JoinItem.new
+      item1.file_info = TestFile.one_page_protected_pdf.file_info
+      item2 = JoinItem.new
+      item2.file_info = TestFile.four_pages_docx.file_info      
+      options = JoinOptions.new
+      options.join_items = [item1, item2]
+      options.output_path = @output_path + "joined.pdf"
+      result = @document_api.join(JoinRequest.new(options))
+      assert_equal(options.output_path, result.path)
+    end    
+
+    def test_import
+      options = ImportOptions.new
+      options.file_info = TestFile.one_page_protected_pdf.file_info
+      options.attachments = [ TestFile.document_txt.path]
+      options.output_path = @output_path + "with-attachment.pdf"
+      result = @document_api.import(ImportRequest.new(options))
+      assert_equal(options.output_path, result.path)
+    end     
 
   end
 end

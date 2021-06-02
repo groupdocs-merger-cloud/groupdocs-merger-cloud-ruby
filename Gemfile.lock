@@ -1,10 +1,9 @@
 PATH
   remote: .
   specs:
-    groupdocs_merger_cloud (19.10)
+    groupdocs_merger_cloud (21.6)
       addressable (~> 2.5.0, >= 2.5.0)
       faraday (~> 0.14.0)
-      mimemagic (~> 0.3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -13,14 +12,12 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
-    mimemagic (0.3.3)
     minitest (5.13.0)
     multipart-post (2.1.1)
     public_suffix (3.1.1)
-    rake (13.0.1)
+    rake (13.0.3)
 
 PLATFORMS
-  ruby
   x64-mingw32
 
 DEPENDENCIES

@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose Pty Ltd" file="join_item.rb">
+ # <copyright company="Aspose Pty Ltd" file="import_options.rb">
  #   Copyright (c) 2003-2021 Aspose Pty Ltd
  # </copyright>
  # <summary>
@@ -28,53 +28,24 @@
 require 'date'
 
 module GroupDocsMergerCloud
-  # Describes document for join operation
-  class JoinItem
+  # Import API options
+  class ImportOptions
 
     # File info
     attr_accessor :file_info
 
-    # List of page numbers to use in a Join operation. NOTE: page numbering starts from 1.
-    attr_accessor :pages
+    # The output path.
+    attr_accessor :output_path
 
-    # Start page number. Ignored if Pages collection is not empty.
-    attr_accessor :start_page_number
-
-    # End page number. Ignored if Pages collection is not empty.
-    attr_accessor :end_page_number
-
-    # Range mode. Ignored if Pages collection is not empty. Default value is AllPages.
-    attr_accessor :range_mode
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # List of files paths to import as attachments
+    attr_accessor :attachments
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'file_info' => :'FileInfo',
-        :'pages' => :'Pages',
-        :'start_page_number' => :'StartPageNumber',
-        :'end_page_number' => :'EndPageNumber',
-        :'range_mode' => :'RangeMode'
+        :'output_path' => :'OutputPath',
+        :'attachments' => :'Attachments'
       }
     end
 
@@ -82,10 +53,8 @@ module GroupDocsMergerCloud
     def self.swagger_types
       {
         :'file_info' => :'FileInfo',
-        :'pages' => :'Array<Integer>',
-        :'start_page_number' => :'Integer',
-        :'end_page_number' => :'Integer',
-        :'range_mode' => :'String'
+        :'output_path' => :'String',
+        :'attachments' => :'Array<String>'
       }
     end
 
@@ -101,22 +70,14 @@ module GroupDocsMergerCloud
         self.file_info = attributes[:'FileInfo']
       end
 
-      if attributes.key?(:'Pages')
-        if (value = attributes[:'Pages']).is_a?(Array)
-          self.pages = value
+      if attributes.key?(:'OutputPath')
+        self.output_path = attributes[:'OutputPath']
+      end
+
+      if attributes.key?(:'Attachments')
+        if (value = attributes[:'Attachments']).is_a?(Array)
+          self.attachments = value
         end
-      end
-
-      if attributes.key?(:'StartPageNumber')
-        self.start_page_number = attributes[:'StartPageNumber']
-      end
-
-      if attributes.key?(:'EndPageNumber')
-        self.end_page_number = attributes[:'EndPageNumber']
-      end
-
-      if attributes.key?(:'RangeMode')
-        self.range_mode = attributes[:'RangeMode']
       end
 
     end
@@ -125,44 +86,13 @@ module GroupDocsMergerCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @start_page_number.nil?
-        invalid_properties.push("invalid value for 'start_page_number', start_page_number cannot be nil.")
-      end
-
-      if @end_page_number.nil?
-        invalid_properties.push("invalid value for 'end_page_number', end_page_number cannot be nil.")
-      end
-
-      if @range_mode.nil?
-        invalid_properties.push("invalid value for 'range_mode', range_mode cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @start_page_number.nil?
-      return false if @end_page_number.nil?
-      return false if @range_mode.nil?
-      range_mode_validator = EnumAttributeValidator.new('String', ["AllPages", "OddPages", "EvenPages"])
-      return false unless range_mode_validator.valid?(@range_mode)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] range_mode Object to be assigned
-    def range_mode=(range_mode)
-      validator = EnumAttributeValidator.new('String', ["AllPages", "OddPages", "EvenPages"])
-      if range_mode.to_i == 0
-        unless validator.valid?(range_mode)
-          raise ArgumentError, "invalid value for 'range_mode', must be one of #{validator.allowable_values}."
-        end
-        @range_mode = range_mode
-      else
-        @range_mode = validator.allowable_values[range_mode.to_i]
-      end
     end
 
     # Checks equality by comparing each attribute.
@@ -171,10 +101,8 @@ module GroupDocsMergerCloud
       return true if self.equal?(other)
       self.class == other.class &&
           file_info == other.file_info &&
-          pages == other.pages &&
-          start_page_number == other.start_page_number &&
-          end_page_number == other.end_page_number &&
-          range_mode == other.range_mode
+          output_path == other.output_path &&
+          attachments == other.attachments
     end
 
     # @see the `==` method
@@ -186,7 +114,7 @@ module GroupDocsMergerCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [file_info, pages, start_page_number, end_page_number, range_mode].hash
+      [file_info, output_path, attachments].hash
     end
 
     # Downcases first letter.

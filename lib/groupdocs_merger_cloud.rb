@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="groupdocs_merger_cloud.rb">
-#   Copyright (c) 2003-2019 Aspose Pty Ltd
+#   Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,6 +51,7 @@ require_relative 'groupdocs_merger_cloud/models/password_result'
 require_relative 'groupdocs_merger_cloud/models/storage_exist'
 require_relative 'groupdocs_merger_cloud/models/storage_file'
 require_relative 'groupdocs_merger_cloud/models/file_version'
+require_relative 'groupdocs_merger_cloud/models/import_options'
 require_relative 'groupdocs_merger_cloud/models/move_options'
 require_relative 'groupdocs_merger_cloud/models/page_options'
 require_relative 'groupdocs_merger_cloud/models/swap_options'

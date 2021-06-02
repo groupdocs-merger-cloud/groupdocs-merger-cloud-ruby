@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#    Copyright (c) 2003-2019 Aspose Pty Ltd
+#    Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,7 +43,7 @@ module GroupDocsMergerCloud
         @info_api.get_info(request)
       end
 
-      assert_equal "Can't find file located at 'some-folder\\notexist.docx'.", error.message[:message]
+      assert_equal "Can't find file located at 'some-folder\\notexist.docx'.", error.message
     end    
 
     def test_GetInfo

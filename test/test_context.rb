@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="test_contex.rb">
-#    Copyright (c) 2003-2019 Aspose Pty Ltd
+#    Copyright (c) 2003-2021 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +27,7 @@
 module GroupDocsMergerCloud  
     
   require 'openssl'    
-    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    #OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
     require "minitest/autorun"
     require "minitest/unit"
