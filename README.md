@@ -1,5 +1,4 @@
 # GroupDocs.Merger Cloud Ruby SDK
-
 Ruby gem for communicating with the GroupDocs.Merger Cloud API
 
 ## Installation
@@ -8,18 +7,17 @@ A gem of groupdocs_merger_cloud is available at [rubygems.org](https://rubygems.
 
 ```shell
 gem install groupdocs_merger_cloud
-```
+```    
 
 To add dependency to your app copy following into your Gemfile and run `bundle install`:
 
-```shell
-gem "groupdocs_merger_cloud", "~> 21.6"
+```
+gem "groupdocs_merger_cloud", "~> 21.12"
 ```
 
 ## Getting Started
 
 Please follow the [installation](#installation) procedure and then run the following code:
-
 ```ruby
 # Load the gem
 require 'groupdocs_merger_cloud'
@@ -42,17 +40,14 @@ end
 ```
 
 ## Licensing
-
 GroupDocs.Merger Cloud Ruby SDK licensed under [MIT License](LICENSE).
 
 ## Resources
-
 + [**Website**](https://www.groupdocs.cloud)
 + [**Product Home**](https://products.groupdocs.cloud/merger)
-+ [**Documentation**](https://docs.groupdocs.cloud/merger/)
++ [**Documentation**](https://docs.groupdocs.cloud/display/mergercloud/Home)
 + [**Free Support Forum**](https://forum.groupdocs.cloud/c/merger)
 + [**Blog**](https://blog.groupdocs.cloud/category/merger)
 
 ## Contact Us
-
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/merger).
