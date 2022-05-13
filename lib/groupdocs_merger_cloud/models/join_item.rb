@@ -1,7 +1,7 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="join_item.rb">
- #   Copyright (c) 2003-2021 Aspose Pty Ltd
+ #   Copyright (c) 2003-2022 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,6 +45,9 @@ module GroupDocsMergerCloud
 
     # Range mode. Ignored if Pages collection is not empty. Default value is AllPages.
     attr_accessor :range_mode
+
+    # Allows to join word documents without empty space between documents
+    attr_accessor :word_join_mode
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -74,7 +77,8 @@ module GroupDocsMergerCloud
         :'pages' => :'Pages',
         :'start_page_number' => :'StartPageNumber',
         :'end_page_number' => :'EndPageNumber',
-        :'range_mode' => :'RangeMode'
+        :'range_mode' => :'RangeMode',
+        :'word_join_mode' => :'WordJoinMode'
       }
     end
 
@@ -85,7 +89,8 @@ module GroupDocsMergerCloud
         :'pages' => :'Array<Integer>',
         :'start_page_number' => :'Integer',
         :'end_page_number' => :'Integer',
-        :'range_mode' => :'String'
+        :'range_mode' => :'String',
+        :'word_join_mode' => :'String'
       }
     end
 
@@ -119,6 +124,10 @@ module GroupDocsMergerCloud
         self.range_mode = attributes[:'RangeMode']
       end
 
+      if attributes.key?(:'WordJoinMode')
+        self.word_join_mode = attributes[:'WordJoinMode']
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -137,6 +146,10 @@ module GroupDocsMergerCloud
         invalid_properties.push("invalid value for 'range_mode', range_mode cannot be nil.")
       end
 
+      if @word_join_mode.nil?
+        invalid_properties.push("invalid value for 'word_join_mode', word_join_mode cannot be nil.")
+      end
+
       return invalid_properties
     end
 
@@ -148,6 +161,9 @@ module GroupDocsMergerCloud
       return false if @range_mode.nil?
       range_mode_validator = EnumAttributeValidator.new('String', ["AllPages", "OddPages", "EvenPages"])
       return false unless range_mode_validator.valid?(@range_mode)
+      return false if @word_join_mode.nil?
+      word_join_mode_validator = EnumAttributeValidator.new('String', ["Default", "Continuous"])
+      return false unless word_join_mode_validator.valid?(@word_join_mode)
       return true
     end
 
@@ -165,6 +181,20 @@ module GroupDocsMergerCloud
       end
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] word_join_mode Object to be assigned
+    def word_join_mode=(word_join_mode)
+      validator = EnumAttributeValidator.new('String', ["Default", "Continuous"])
+      if word_join_mode.to_i == 0
+        unless validator.valid?(word_join_mode)
+          raise ArgumentError, "invalid value for 'word_join_mode', must be one of #{validator.allowable_values}."
+        end
+        @word_join_mode = word_join_mode
+      else
+        @word_join_mode = validator.allowable_values[word_join_mode.to_i]
+      end
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(other)
@@ -174,7 +204,8 @@ module GroupDocsMergerCloud
           pages == other.pages &&
           start_page_number == other.start_page_number &&
           end_page_number == other.end_page_number &&
-          range_mode == other.range_mode
+          range_mode == other.range_mode &&
+          word_join_mode == other.word_join_mode
     end
 
     # @see the `==` method
@@ -186,7 +217,7 @@ module GroupDocsMergerCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [file_info, pages, start_page_number, end_page_number, range_mode].hash
+      [file_info, pages, start_page_number, end_page_number, range_mode, word_join_mode].hash
     end
 
     # Downcases first letter.
