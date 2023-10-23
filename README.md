@@ -12,7 +12,7 @@ gem install groupdocs_merger_cloud
 To add dependency to your app copy following into your Gemfile and run `bundle install`:
 
 ```
-gem "groupdocs_merger_cloud", "~> 23.2"
+gem "groupdocs_merger_cloud", "~> 23.10"
 ```
 
 ## Getting Started
