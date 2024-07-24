@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="groupdocs_merger_cloud.rb">
-#   Copyright (c) 2003-2023 Aspose Pty Ltd
+#   Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,7 +25,7 @@
 
 # Common files
 require_relative 'groupdocs_merger_cloud/api_client'
-require_relative 'groupdocs_merger_cloud/api_error'
+require_relative 'groupdocs_merger_cloud/api_client_error'
 require_relative 'groupdocs_merger_cloud/version'
 require_relative 'groupdocs_merger_cloud/configuration'
 

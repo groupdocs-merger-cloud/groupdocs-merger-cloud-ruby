@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="document.rb">
-#   Copyright (c) 2003-2023 Aspose Pty Ltd
+#   Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -329,7 +329,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="import_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -374,7 +374,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="join_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -419,7 +419,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="preview_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -464,7 +464,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="split_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy

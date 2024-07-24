@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="folder.rb">
-#   Copyright (c) 2003-2023 Aspose Pty Ltd
+#   Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -430,7 +430,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="copy_folder_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -487,7 +487,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="create_folder_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -536,7 +536,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="delete_folder_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -589,7 +589,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="get_files_list_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -638,7 +638,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="move_folder_request.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy

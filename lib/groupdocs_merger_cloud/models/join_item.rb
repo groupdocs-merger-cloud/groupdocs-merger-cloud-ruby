@@ -1,7 +1,7 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="join_item.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,9 @@ module GroupDocsMergerCloud
     # Allows to join word documents without empty space between documents.
     attr_accessor :word_join_mode
 
+    # Compliance mode for the Word Ooxml format
+    attr_accessor :word_join_compliance
+
     # Possible modes for the image joining.
     attr_accessor :image_join_mode
     class EnumAttributeValidator
@@ -82,6 +85,7 @@ module GroupDocsMergerCloud
         :'end_page_number' => :'EndPageNumber',
         :'range_mode' => :'RangeMode',
         :'word_join_mode' => :'WordJoinMode',
+        :'word_join_compliance' => :'WordJoinCompliance',
         :'image_join_mode' => :'ImageJoinMode'
       }
     end
@@ -95,6 +99,7 @@ module GroupDocsMergerCloud
         :'end_page_number' => :'Integer',
         :'range_mode' => :'String',
         :'word_join_mode' => :'String',
+        :'word_join_compliance' => :'String',
         :'image_join_mode' => :'String'
       }
     end
@@ -133,6 +138,10 @@ module GroupDocsMergerCloud
         self.word_join_mode = attributes[:'WordJoinMode']
       end
 
+      if attributes.key?(:'WordJoinCompliance')
+        self.word_join_compliance = attributes[:'WordJoinCompliance']
+      end
+
       if attributes.key?(:'ImageJoinMode')
         self.image_join_mode = attributes[:'ImageJoinMode']
       end
@@ -159,6 +168,10 @@ module GroupDocsMergerCloud
         invalid_properties.push("invalid value for 'word_join_mode', word_join_mode cannot be nil.")
       end
 
+      if @word_join_compliance.nil?
+        invalid_properties.push("invalid value for 'word_join_compliance', word_join_compliance cannot be nil.")
+      end
+
       if @image_join_mode.nil?
         invalid_properties.push("invalid value for 'image_join_mode', image_join_mode cannot be nil.")
       end
@@ -177,6 +190,9 @@ module GroupDocsMergerCloud
       return false if @word_join_mode.nil?
       word_join_mode_validator = EnumAttributeValidator.new('String', ["Default", "Continuous"])
       return false unless word_join_mode_validator.valid?(@word_join_mode)
+      return false if @word_join_compliance.nil?
+      word_join_compliance_validator = EnumAttributeValidator.new('String', ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict", "Auto"])
+      return false unless word_join_compliance_validator.valid?(@word_join_compliance)
       return false if @image_join_mode.nil?
       image_join_mode_validator = EnumAttributeValidator.new('String', ["Horizontal", "Vertical"])
       return false unless image_join_mode_validator.valid?(@image_join_mode)
@@ -212,6 +228,20 @@ module GroupDocsMergerCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] word_join_compliance Object to be assigned
+    def word_join_compliance=(word_join_compliance)
+      validator = EnumAttributeValidator.new('String', ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict", "Auto"])
+      if word_join_compliance.to_i == 0
+        unless validator.valid?(word_join_compliance)
+          raise ArgumentError, "invalid value for 'word_join_compliance', must be one of #{validator.allowable_values}."
+        end
+        @word_join_compliance = word_join_compliance
+      else
+        @word_join_compliance = validator.allowable_values[word_join_compliance.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
     # @param [Object] image_join_mode Object to be assigned
     def image_join_mode=(image_join_mode)
       validator = EnumAttributeValidator.new('String', ["Horizontal", "Vertical"])
@@ -236,6 +266,7 @@ module GroupDocsMergerCloud
           end_page_number == other.end_page_number &&
           range_mode == other.range_mode &&
           word_join_mode == other.word_join_mode &&
+          word_join_compliance == other.word_join_compliance &&
           image_join_mode == other.image_join_mode
     end
 
@@ -248,7 +279,7 @@ module GroupDocsMergerCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [file_info, pages, start_page_number, end_page_number, range_mode, word_join_mode, image_join_mode].hash
+      [file_info, pages, start_page_number, end_page_number, range_mode, word_join_mode, word_join_compliance, image_join_mode].hash
     end
 
     # Downcases first letter.

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="api_error.rb">
-#   Copyright (c) 2003-2023 Aspose Pty Ltd
+#   Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,15 +25,15 @@
 
 module GroupDocsMergerCloud
   #
-  # ApiError class for error handling
+  # ApiClientError class for error handling
   #
-  class ApiError < StandardError
+  class ApiClientError < StandardError
     attr_reader :code
     attr_reader :message
 
     # Usage examples:
-    #   ApiError.new
-    #   ApiError.new(:code => 500, :response_body => "")
+    #   ApiClientError.new
+    #   ApiClientError.new(:code => 500, :response_body => "")
     def initialize(arg = nil)
       if arg.is_a? Hash
         

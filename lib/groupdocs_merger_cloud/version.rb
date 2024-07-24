@@ -1,7 +1,7 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="version.rb">
- #   Copyright (c) 2003-2023 Aspose Pty Ltd
+ #   Copyright (c) 2003-2024 Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,5 +25,5 @@
  # --------------------------------------------------------------------------------------------------------------------
  #
 module GroupDocsMergerCloud
-  VERSION = "23.10".freeze
+  VERSION = "24.7".freeze
 end

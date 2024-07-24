@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd">
-#    Copyright (c) 2003-2023 Aspose Pty Ltd
+#    Copyright (c) 2003-2024 Aspose Pty Ltd
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,7 +39,7 @@ module GroupDocsMergerCloud
       file = TestFile.not_exist;
       request = GetInfoRequest.new(file.file_info)    
 
-      error = assert_raises ApiError do
+      error = assert_raises ApiClientError do
         @info_api.get_info(request)
       end
 
