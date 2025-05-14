@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    groupdocs_merger_cloud (24.11)
+    groupdocs_merger_cloud (25.5)
       addressable (~> 2.8.0, >= 2.8.0)
       faraday (~> 0.14.0)
 

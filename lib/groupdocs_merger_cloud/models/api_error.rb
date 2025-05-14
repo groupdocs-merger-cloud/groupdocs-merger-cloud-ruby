@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose Pty Ltd" file="page_info.rb">
+ # <copyright company="Aspose Pty Ltd" file="api_error.rb">
  #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
@@ -28,38 +28,33 @@
 require 'date'
 
 module GroupDocsMergerCloud
-  # Describes page properties
-  class PageInfo
-
-    # Page width in pixels when converted to image
-    attr_accessor :width
-
-    # Page height in pixels when converted to image
-    attr_accessor :height
-
-    # Document page number
-    attr_accessor :page_number
-
-    # Indicates whether page is visible or not
-    attr_accessor :visible
+  
+  class ApiError
+    attr_accessor :code
+    attr_accessor :message
+    attr_accessor :description
+    attr_accessor :date_time
+    attr_accessor :inner_error
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'width' => :'Width',
-        :'height' => :'Height',
-        :'page_number' => :'PageNumber',
-        :'visible' => :'Visible'
+        :'code' => :'Code',
+        :'message' => :'Message',
+        :'description' => :'Description',
+        :'date_time' => :'DateTime',
+        :'inner_error' => :'InnerError'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'width' => :'Integer',
-        :'height' => :'Integer',
-        :'page_number' => :'Integer',
-        :'visible' => :'BOOLEAN'
+        :'code' => :'String',
+        :'message' => :'String',
+        :'description' => :'String',
+        :'date_time' => :'DateTime',
+        :'inner_error' => :'ApiError'
       }
     end
 
@@ -71,20 +66,24 @@ module GroupDocsMergerCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Width')
-        self.width = attributes[:'Width']
+      if attributes.key?(:'Code')
+        self.code = attributes[:'Code']
       end
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.key?(:'Message')
+        self.message = attributes[:'Message']
       end
 
-      if attributes.key?(:'PageNumber')
-        self.page_number = attributes[:'PageNumber']
+      if attributes.key?(:'Description')
+        self.description = attributes[:'Description']
       end
 
-      if attributes.key?(:'Visible')
-        self.visible = attributes[:'Visible']
+      if attributes.key?(:'DateTime')
+        self.date_time = attributes[:'DateTime']
+      end
+
+      if attributes.key?(:'InnerError')
+        self.inner_error = attributes[:'InnerError']
       end
 
     end
@@ -93,32 +92,12 @@ module GroupDocsMergerCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @width.nil?
-        invalid_properties.push("invalid value for 'width', width cannot be nil.")
-      end
-
-      if @height.nil?
-        invalid_properties.push("invalid value for 'height', height cannot be nil.")
-      end
-
-      if @page_number.nil?
-        invalid_properties.push("invalid value for 'page_number', page_number cannot be nil.")
-      end
-
-      if @visible.nil?
-        invalid_properties.push("invalid value for 'visible', visible cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @width.nil?
-      return false if @height.nil?
-      return false if @page_number.nil?
-      return false if @visible.nil?
       return true
     end
 
@@ -127,10 +106,11 @@ module GroupDocsMergerCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          width == other.width &&
-          height == other.height &&
-          page_number == other.page_number &&
-          visible == other.visible
+          code == other.code &&
+          message == other.message &&
+          description == other.description &&
+          date_time == other.date_time &&
+          inner_error == other.inner_error
     end
 
     # @see the `==` method
@@ -142,7 +122,7 @@ module GroupDocsMergerCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [width, height, page_number, visible].hash
+      [code, message, description, date_time, inner_error].hash
     end
 
     # Downcases first letter.

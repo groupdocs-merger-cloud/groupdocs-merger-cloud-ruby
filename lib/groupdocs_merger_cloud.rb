@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="groupdocs_merger_cloud.rb">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,6 +30,8 @@ require_relative 'groupdocs_merger_cloud/version'
 require_relative 'groupdocs_merger_cloud/configuration'
 
 # Models
+require_relative 'groupdocs_merger_cloud/models/api_error'
+require_relative 'groupdocs_merger_cloud/models/api_error_response'
 require_relative 'groupdocs_merger_cloud/models/consumption_result'
 require_relative 'groupdocs_merger_cloud/models/disc_usage'
 require_relative 'groupdocs_merger_cloud/models/document_result'
@@ -44,6 +46,8 @@ require_relative 'groupdocs_merger_cloud/models/formats_result'
 require_relative 'groupdocs_merger_cloud/models/info_result'
 require_relative 'groupdocs_merger_cloud/models/join_item'
 require_relative 'groupdocs_merger_cloud/models/join_options'
+require_relative 'groupdocs_merger_cloud/models/mix_pages_item'
+require_relative 'groupdocs_merger_cloud/models/mix_pages_options'
 require_relative 'groupdocs_merger_cloud/models/multi_document_result'
 require_relative 'groupdocs_merger_cloud/models/object_exist'
 require_relative 'groupdocs_merger_cloud/models/options'

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose Pty Ltd" file="document.rb">
-#   Copyright (c) 2003-2024 Aspose Pty Ltd
+#   Copyright (c) Aspose Pty Ltd
 # </copyright>
 # <summary>
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -168,6 +168,58 @@ module GroupDocsMergerCloud
       [data, status_code, headers]
     end
 
+    # Join selected pages from multiple documents into one document
+    # 
+    # @param request mix_request
+    # @return [DocumentResult]
+    def mix(request)
+      data, _status_code, _headers = mix_with_http_info(request)
+      data
+    end
+
+    # Join selected pages from multiple documents into one document
+    # 
+    # @param request mix_request
+    # @return [Array<(DocumentResult, Fixnum, Hash)>]
+    # DocumentResult data, response status code and response headers
+    def mix_with_http_info(request)
+      raise ArgumentError, 'Incorrect request type' unless request.is_a? MixRequest
+
+      @api_client.config.logger.debug 'Calling API: DocumentApi.mix ...' if @api_client.config.debugging
+      # verify the required parameter 'options' is set
+      raise ArgumentError, 'Missing the required parameter options when calling DocumentApi.mix' if @api_client.config.client_side_validation && request.options.nil?
+      # resource path
+      local_var_path = '/merger/mix'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.options)
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+                                                        header_params: header_params,
+                                                        query_params: query_params,
+                                                        form_params: form_params,
+                                                        body: post_body,
+                                                        access_token: get_access_token,
+                                                        return_type: 'DocumentResult')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        DocumentApi#mix\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Generate document pages preview
     # 
     # @param request preview_request
@@ -329,7 +381,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="import_request.rb">
- #   Copyright (c) 2003-2024 Aspose Pty Ltd
+ #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -374,7 +426,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="join_request.rb">
- #   Copyright (c) 2003-2024 Aspose Pty Ltd
+ #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -418,8 +470,53 @@ module GroupDocsMergerCloud
 end
  #
  # --------------------------------------------------------------------------------------------------------------------
+ # <copyright company="Aspose Pty Ltd" file="mix_request.rb">
+ #   Copyright (c) Aspose Pty Ltd
+ # </copyright>
+ # <summary>
+ #  Permission is hereby granted, free of charge, to any person obtaining a copy
+ #  of this software and associated documentation files (the "Software"), to deal
+ #  in the Software without restriction, including without limitation the rights
+ #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ #  copies of the Software, and to permit persons to whom the Software is
+ #  furnished to do so, subject to the following conditions:
+ # 
+ #  The above copyright notice and this permission notice shall be included in all
+ #  copies or substantial portions of the Software.
+ # 
+ #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ #  SOFTWARE.
+ # </summary>
+ # --------------------------------------------------------------------------------------------------------------------
+ #
+
+module GroupDocsMergerCloud
+
+  #
+  # Request model for mix operation.
+  #
+  class MixRequest
+
+        # Mix options
+        attr_accessor :options
+	
+        #
+        # Initializes a new instance.
+        # @param options Mix options
+        def initialize(options)
+           self.options = options
+        end
+  end
+end
+ #
+ # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="preview_request.rb">
- #   Copyright (c) 2003-2024 Aspose Pty Ltd
+ #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -464,7 +561,7 @@ end
  #
  # --------------------------------------------------------------------------------------------------------------------
  # <copyright company="Aspose Pty Ltd" file="split_request.rb">
- #   Copyright (c) 2003-2024 Aspose Pty Ltd
+ #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
  #  Permission is hereby granted, free of charge, to any person obtaining a copy

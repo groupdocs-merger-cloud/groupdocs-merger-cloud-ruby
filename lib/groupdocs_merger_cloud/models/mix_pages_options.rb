@@ -1,6 +1,6 @@
  #
  # --------------------------------------------------------------------------------------------------------------------
- # <copyright company="Aspose Pty Ltd" file="page_info.rb">
+ # <copyright company="Aspose Pty Ltd" file="mix_pages_options.rb">
  #   Copyright (c) Aspose Pty Ltd
  # </copyright>
  # <summary>
@@ -28,38 +28,69 @@
 require 'date'
 
 module GroupDocsMergerCloud
-  # Describes page properties
-  class PageInfo
+  # Defines options for documents JoinPages method
+  class MixPagesOptions
 
-    # Page width in pixels when converted to image
-    attr_accessor :width
+    # Source documents for JoinPages operation
+    attr_accessor :files
 
-    # Page height in pixels when converted to image
-    attr_accessor :height
+    # Page numbers for document indicies in Files collection.
+    attr_accessor :files_pages
 
-    # Document page number
-    attr_accessor :page_number
+    # The output path
+    attr_accessor :output_path
 
-    # Indicates whether page is visible or not
-    attr_accessor :visible
+    # Allows to join word documents without empty space between documents.
+    attr_accessor :word_join_mode
+
+    # Compliance mode for the Word Ooxml format
+    attr_accessor :word_join_compliance
+
+    # Possible modes for the image joining.
+    attr_accessor :image_join_mode
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'width' => :'Width',
-        :'height' => :'Height',
-        :'page_number' => :'PageNumber',
-        :'visible' => :'Visible'
+        :'files' => :'Files',
+        :'files_pages' => :'FilesPages',
+        :'output_path' => :'OutputPath',
+        :'word_join_mode' => :'WordJoinMode',
+        :'word_join_compliance' => :'WordJoinCompliance',
+        :'image_join_mode' => :'ImageJoinMode'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'width' => :'Integer',
-        :'height' => :'Integer',
-        :'page_number' => :'Integer',
-        :'visible' => :'BOOLEAN'
+        :'files' => :'Array<FileInfo>',
+        :'files_pages' => :'Array<MixPagesItem>',
+        :'output_path' => :'String',
+        :'word_join_mode' => :'String',
+        :'word_join_compliance' => :'String',
+        :'image_join_mode' => :'String'
       }
     end
 
@@ -71,20 +102,32 @@ module GroupDocsMergerCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'Width')
-        self.width = attributes[:'Width']
+      if attributes.key?(:'Files')
+        if (value = attributes[:'Files']).is_a?(Array)
+          self.files = value
+        end
       end
 
-      if attributes.key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.key?(:'FilesPages')
+        if (value = attributes[:'FilesPages']).is_a?(Array)
+          self.files_pages = value
+        end
       end
 
-      if attributes.key?(:'PageNumber')
-        self.page_number = attributes[:'PageNumber']
+      if attributes.key?(:'OutputPath')
+        self.output_path = attributes[:'OutputPath']
       end
 
-      if attributes.key?(:'Visible')
-        self.visible = attributes[:'Visible']
+      if attributes.key?(:'WordJoinMode')
+        self.word_join_mode = attributes[:'WordJoinMode']
+      end
+
+      if attributes.key?(:'WordJoinCompliance')
+        self.word_join_compliance = attributes[:'WordJoinCompliance']
+      end
+
+      if attributes.key?(:'ImageJoinMode')
+        self.image_join_mode = attributes[:'ImageJoinMode']
       end
 
     end
@@ -93,20 +136,16 @@ module GroupDocsMergerCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = []
-      if @width.nil?
-        invalid_properties.push("invalid value for 'width', width cannot be nil.")
+      if @word_join_mode.nil?
+        invalid_properties.push("invalid value for 'word_join_mode', word_join_mode cannot be nil.")
       end
 
-      if @height.nil?
-        invalid_properties.push("invalid value for 'height', height cannot be nil.")
+      if @word_join_compliance.nil?
+        invalid_properties.push("invalid value for 'word_join_compliance', word_join_compliance cannot be nil.")
       end
 
-      if @page_number.nil?
-        invalid_properties.push("invalid value for 'page_number', page_number cannot be nil.")
-      end
-
-      if @visible.nil?
-        invalid_properties.push("invalid value for 'visible', visible cannot be nil.")
+      if @image_join_mode.nil?
+        invalid_properties.push("invalid value for 'image_join_mode', image_join_mode cannot be nil.")
       end
 
       return invalid_properties
@@ -115,11 +154,58 @@ module GroupDocsMergerCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @width.nil?
-      return false if @height.nil?
-      return false if @page_number.nil?
-      return false if @visible.nil?
+      return false if @word_join_mode.nil?
+      word_join_mode_validator = EnumAttributeValidator.new('String', ["Default", "Continuous"])
+      return false unless word_join_mode_validator.valid?(@word_join_mode)
+      return false if @word_join_compliance.nil?
+      word_join_compliance_validator = EnumAttributeValidator.new('String', ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict", "Auto"])
+      return false unless word_join_compliance_validator.valid?(@word_join_compliance)
+      return false if @image_join_mode.nil?
+      image_join_mode_validator = EnumAttributeValidator.new('String', ["Horizontal", "Vertical"])
+      return false unless image_join_mode_validator.valid?(@image_join_mode)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] word_join_mode Object to be assigned
+    def word_join_mode=(word_join_mode)
+      validator = EnumAttributeValidator.new('String', ["Default", "Continuous"])
+      if word_join_mode.to_i == 0
+        unless validator.valid?(word_join_mode)
+          raise ArgumentError, "invalid value for 'word_join_mode', must be one of #{validator.allowable_values}."
+        end
+        @word_join_mode = word_join_mode
+      else
+        @word_join_mode = validator.allowable_values[word_join_mode.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] word_join_compliance Object to be assigned
+    def word_join_compliance=(word_join_compliance)
+      validator = EnumAttributeValidator.new('String', ["Ecma376_2006", "Iso29500_2008_Transitional", "Iso29500_2008_Strict", "Auto"])
+      if word_join_compliance.to_i == 0
+        unless validator.valid?(word_join_compliance)
+          raise ArgumentError, "invalid value for 'word_join_compliance', must be one of #{validator.allowable_values}."
+        end
+        @word_join_compliance = word_join_compliance
+      else
+        @word_join_compliance = validator.allowable_values[word_join_compliance.to_i]
+      end
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] image_join_mode Object to be assigned
+    def image_join_mode=(image_join_mode)
+      validator = EnumAttributeValidator.new('String', ["Horizontal", "Vertical"])
+      if image_join_mode.to_i == 0
+        unless validator.valid?(image_join_mode)
+          raise ArgumentError, "invalid value for 'image_join_mode', must be one of #{validator.allowable_values}."
+        end
+        @image_join_mode = image_join_mode
+      else
+        @image_join_mode = validator.allowable_values[image_join_mode.to_i]
+      end
     end
 
     # Checks equality by comparing each attribute.
@@ -127,10 +213,12 @@ module GroupDocsMergerCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          width == other.width &&
-          height == other.height &&
-          page_number == other.page_number &&
-          visible == other.visible
+          files == other.files &&
+          files_pages == other.files_pages &&
+          output_path == other.output_path &&
+          word_join_mode == other.word_join_mode &&
+          word_join_compliance == other.word_join_compliance &&
+          image_join_mode == other.image_join_mode
     end
 
     # @see the `==` method
@@ -142,7 +230,7 @@ module GroupDocsMergerCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [width, height, page_number, visible].hash
+      [files, files_pages, output_path, word_join_mode, word_join_compliance, image_join_mode].hash
     end
 
     # Downcases first letter.
