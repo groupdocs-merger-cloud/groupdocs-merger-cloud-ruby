@@ -55,7 +55,7 @@ module GroupDocsMergerCloud
         @folder_api = FolderApi.from_config(config)   
         @file_api = FileApi.from_config(config)   
 
-        @output_path = "output\\"
+        @output_path = "output/"
         
         upload_test_files()
       end
@@ -71,7 +71,7 @@ module GroupDocsMergerCloud
 
       def upload_test_files
         unless @@test_files_uploaded then
-          test_file_path = "test\\test_files\\"
+          test_file_path = "test/test_files/"
 
           TestFile.test_files_list.each do |test_file|
 

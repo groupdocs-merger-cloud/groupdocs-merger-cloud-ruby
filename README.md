@@ -1,5 +1,6 @@
 # GroupDocs.Merger Cloud Ruby SDK
-Ruby gem for communicating with the GroupDocs.Merger Cloud API
+
+[GroupDocs.Merger Cloud API](https://products.groupdocs.cloud/merger/ruby/) empowers developers to integrate advanced document merging and page manipulation functionalities into their Ruby applications. Supporting over 40 file formats, this REST API allows seamless merging, splitting, and reorganization of document pages, including PDFs, Word documents, Excel spreadsheets, and more. Security features include password protection for documents, while additional file and folder operations streamline cloud storage management. Whether working with cross-format documents or performing complex page manipulations, GroupDocs.Merger Cloud delivers robust tools for secure and efficient document handling across web, desktop, and mobile platforms.
 
 ## Installation
 
@@ -12,31 +13,37 @@ gem install groupdocs_merger_cloud
 To add dependency to your app copy following into your Gemfile and run `bundle install`:
 
 ```
-gem "groupdocs_merger_cloud", "~> 25.5"
+gem "groupdocs_merger_cloud", "~> 25.11"
 ```
 
 ## Getting Started
 
-Please follow the [installation](#installation) procedure and then run the following code:
+This example demonstrates merging different Word files seamlessly with a few lines of code:
+
 ```ruby
-# Load the gem
-require 'groupdocs_merger_cloud'
-
-# Get your app_sid and app_key at https://dashboard.groupdocs.cloud (free registration is required).
-app_sid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-app_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-
-# Create instance of the API class
-api = GroupDocsMergerCloud::InfoApi.from_keys(app_sid, app_key)
-
-# Retrieve supported file-formats
-response = api.get_supported_file_formats
-
-# Print out supported file-formats
-puts("Supported file-formats:")
-response.formats.each do |format|
-  puts("#{format.file_format} (#{format.extension})") 
-end
+# For complete examples and data files, please go to https://github.com/groupdocs-merger-cloud/groupdocs-merger-cloud-ruby-samples
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+ 
+documentApi = GroupDocsMergerCloud::DocumentApi.from_keys($app_sid, $app_key)
+ 
+item1 = GroupDocsMergerCloud::JoinItem.new
+item1.file_info = GroupDocsMergerCloud::FileInfo.new
+item1.file_info.file_path = 'WordProcessing/sample-10-pages.docx'
+item1.pages = [3, 6, 8]
+ 
+item2 = GroupDocsMergerCloud::JoinItem.new
+item2.file_info = GroupDocsMergerCloud::FileInfo.new
+item2.file_info.file_path = 'WordProcessing/four-pages.docx'       
+item2.start_page_number = 1
+item2.end_page_number = 4
+item2.range_mode = "OddPages"
+ 
+options = GroupDocsMergerCloud::JoinOptions.new
+options.join_items = [item1, item2]
+options.output_path = "Output/joined-pages.docx"
+ 
+result = documentApi.join(GroupDocsMergerCloud::JoinRequest.new(options))
 ```
 
 ## Licensing

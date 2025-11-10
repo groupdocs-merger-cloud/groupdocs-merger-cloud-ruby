@@ -45,7 +45,7 @@ module GroupDocsMergerCloud
       assert_equal false, response.exists
 
       # Upload file back
-      file = File.open("test\\test_files\\" + test_file.path, "r")
+      file = File.open("test/test_files/" + test_file.path, "r")
       upload_request = UploadFileRequest.new test_file.path, file
       @file_api.upload_file(upload_request)
 

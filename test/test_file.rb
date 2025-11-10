@@ -45,28 +45,28 @@ module GroupDocsMergerCloud
         def self.not_exist
             f = TestFile.new
             f.file_name = "notexist.docx"
-            f.folder = "some-folder\\"
+            f.folder = "some-folder/"
             f
         end
 
         def self.one_page_docx
             f = TestFile.new
             f.file_name = "one-page.docx"
-            f.folder = "WordProcessing\\"
+            f.folder = "WordProcessing/"
             f
         end
 
         def self.four_pages_docx
             f = TestFile.new
             f.file_name = "four-pages.docx"
-            f.folder = "WordProcessing\\"
+            f.folder = "WordProcessing/"
             f
         end
 
         def self.password_protected_docx
             f = TestFile.new
             f.file_name = "password-protected.docx"
-            f.folder = "WordProcessing\\"
+            f.folder = "WordProcessing/"
             f.password = "password"
             f
         end
@@ -74,14 +74,14 @@ module GroupDocsMergerCloud
         def self.four_sheets_xlsx
             f = TestFile.new
             f.file_name = "four-sheets.xlsx"
-            f.folder = "Spreadsheet\\"
+            f.folder = "Spreadsheet/"
             f
         end
 
         def self.four_sheets_protected_xlsx
             f = TestFile.new
             f.file_name = "four-sheets-protected.xlsx"
-            f.folder = "Spreadsheet\\"
+            f.folder = "Spreadsheet/"
             f.password = "password"
             f
         end
@@ -89,14 +89,14 @@ module GroupDocsMergerCloud
         def self.ten_pages_pdf
             f = TestFile.new
             f.file_name = "ten-pages.pdf"
-            f.folder = "Pdf\\"
+            f.folder = "Pdf/"
             f
         end
 
         def self.one_page_protected_pdf
             f = TestFile.new
             f.file_name = "one-page-password.pdf"
-            f.folder = "Pdf\\"
+            f.folder = "Pdf/"
             f.password = "password"
             f
         end 
@@ -104,7 +104,7 @@ module GroupDocsMergerCloud
         def self.document_txt
             f = TestFile.new
             f.file_name = "document.txt"
-            f.folder = "Text\\"
+            f.folder = "Text/"
             f
         end        
 
